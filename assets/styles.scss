@@ -57,7 +57,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .profile-avatar {
@@ -68,8 +68,23 @@
   max-width: 320px;
 }
 
-.maintenance-note {
-  margin-bottom: 0;
+.sidebar-about {
+  border-top: 1px solid #d8dee4;
+  margin-top: 22px;
+  padding-top: 18px;
+}
+
+.sidebar-about h2 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.sidebar-about p {
+  color: #57606a;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
 }
 
 .social-link {
@@ -90,39 +105,34 @@
 }
 
 .maintenance-shell {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   min-height: calc(100vh - 96px);
+  padding-top: 12px;
 }
 
-.maintenance-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f6f8fa 100%);
-  border: 1px solid #d0d7de;
-  border-radius: 24px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
-  max-width: 640px;
-  padding: 48px 40px;
+.home-panel {
+  max-width: 760px;
 }
 
-.maintenance-card h2 {
-  font-size: 3rem;
-  line-height: 1;
-  margin-bottom: 16px;
+.home-panel h2 {
+  font-size: 2.6rem;
+  line-height: 1.1;
+  margin-bottom: 22px;
 }
 
-.maintenance-card p {
+.home-panel p {
   color: #57606a;
-  font-size: 1.15rem;
-  margin-bottom: 0;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
 }
 
-.maintenance-eyebrow {
-  color: #0969da !important;
-  font-size: 0.95rem !important;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  margin-bottom: 12px !important;
-  text-transform: uppercase;
+.home-note {
+  color: #6e7781;
+  font-size: 0.98rem !important;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 @media (max-width: 767px) {
@@ -131,11 +141,7 @@
     min-height: auto;
   }
 
-  .maintenance-card {
-    padding: 32px 24px;
-  }
-
-  .maintenance-card h2 {
-    font-size: 2.2rem;
+  .home-panel h2 {
+    font-size: 2rem;
   }
 }

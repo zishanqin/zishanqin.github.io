@@ -10,11 +10,14 @@
     {% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}
   </h1>
   <p class="mb-2 f4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
-    PhD student at UNSW
+    PhD student at UNSW | CSIRO Data61
   </p>
-  <p class="maintenance-note {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
-    Personal website refresh in progress.
-  </p>
+  <section class="sidebar-about">
+    <h2 class="{% if site.style == 'dark' %}text-white{% endif %}">About Me</h2>
+    <p class="{% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
+      My research interests lie in 3D generation and reconstruction.
+    </p>
+  </section>
 
   <div class="social-popout" aria-label="Social media links">
     <a class="social-link" href="https://github.com/zishanqin" aria-label="GitHub">
