@@ -1,0 +1,30 @@
+{% if site.layout == 'stacked' %}
+  {% assign metadata_styles = 'd-md-inline-block mx-3 mb-1 mb-md-0' %}
+{% else %}
+  {% assign metadata_styles = 'd-flex flex-items-center mb-3' %}
+{% endif %}
+
+<div class="profile-card">
+  <img src="{{ user.avatar_url }}" alt="{% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}" class="circle mb-3 profile-avatar">
+  <h1 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed">
+    {% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}
+  </h1>
+  <p class="mb-2 f4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
+    PhD student at UNSW
+  </p>
+  <p class="maintenance-note {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
+    Personal website refresh in progress.
+  </p>
+
+  <div class="social-popout" aria-label="Social media links">
+    <a class="social-link" href="https://github.com/zishanqin" aria-label="GitHub">
+      <img id="github" src="images/GitHub.png" width="44" height="44" alt="GitHub">
+    </a>
+    <a class="social-link" href="https://scholar.google.com.au/citations?hl=zh-CN&user=wGOQawgAAAAJ" aria-label="Google Scholar">
+      <img id="gscholar" src="images/GScholar.svg" width="44" height="44" alt="Google Scholar">
+    </a>
+    <a class="social-link" href="https://au.linkedin.com/in/zishan-qin-100957200" aria-label="LinkedIn">
+      <img id="linkedin" src="images/Linkedin.png" width="44" height="44" alt="LinkedIn">
+    </a>
+  </div>
+</div>

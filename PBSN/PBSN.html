@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Phonetic-based feature representation with sine modulation for Mandarin speaker identification">
+  <meta name="keywords" content="Speaker identification, Fourier transform">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PBSN</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+  }
+  td:nth-child(even), th:nth-child(even) {
+  background-color: #D6EEEE;
+  }
+  th, td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  }
+  .center {
+  margin-left: auto;
+  margin-right: auto;
+  }
+</style>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Phonetic-based feature representation with sine modulation for Mandarin speaker identification</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/zishanqin">Zishan Qin</a></a><sup>*</sup>,
+              <span class="author-block">
+                <a href="https://github.com/ChenyuGu01">Chenyu Gu</a></a><sup>*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://github.com/Ke1yNoc">Lei Zhang</a></a><sup>*</sup>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Australian National University</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal contribution</span>
+            </div>
+            
+            <div class="column has-text-centered">
+                <!-- <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/zishanqin/PBSM"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+              </div>
+  
+            </div>
+          </div>
+          <hr>
+          <div class="column has-text-centered">
+          <h1 class="subtitle is-3 publication-abstract">Abstract</h1>
+            <div class="is-size-5 publication-abstract">
+              <span class="abstract-block">Speaker identification is to obtain speaker identity from audio
+                samples. To address this task, our research introduces a novel
+                phonetic-based feature representation for closed-set speaker
+                identification. This approach encapsulates speaker attributes
+                across time and frequency domains and seamlessly integrates
+                context information, allowing us to deduce speaker identities
+                effectively. We also explore the effectiveness of using distinct 
+                word classes as distinct channels within the framework.
+                Moreover, we delve into the fusion of temporal and spectral 
+                domains, leveraging a <i>sine modulation</i> mechanism in the
+                feature representation to modulate emphasis across temporal
+                spans, resulting in a more robust and efficient identification.
+                Our approach yields a peak accuracy of 85.79%, surpassing
+                existing MFCC-based models.</span>
+          </div>
+          <hr>
+          <div class="column has-text-centered">
+            <h1 class="subtitle is-3 publication-fig">Method Overview</h1>
+              <img src="Architecture_v25-2.png" alt="methodFig"><br>
+              <div class="is-size-5 publication-fig">
+                <span class="method-block">Given an input sample, our method proceeds as follows: (a) Extract phonetic tokens
+                    based on the provided caption. (b) The tokens are then classified into M classes, resulting in a list of tokens
+                    associated with each class. (c) Utilizing a <i>sine function</i> across the temporal dimension, we compute weights for each
+                  token. By taking the weighted sum of the tokens, we generate a M dimensional feature volume, each dimension corresponding
+                   to a class. (d) The feature volume is passed to the classifier, producing the predicted identity.</span>
+              </div>
+          </div>
+          <hr>
+          <div class="column has-text-centered">
+            <h1 class="subtitle is-3 publication-rst">Experiment Result</h1>
+              <img src="exp_rst.png" alt="rstFig"><br>
+              <div class="is-size-5 publication-exp">
+                <span class="method-block">Highest prediction accuracy(%) using different <i>sine
+                  modulation</i> functions with distinct configurations, compared
+                  to MFCC. Each cell value, except MFCC, corresponds to
+                  its optimal maximum frequency and frequency bin size configuration specified below.</span>
+              </div>
+          </div>
+          <hr>
+          <div class="column has-text-centered">
+            <h1 class="subtitle is-4 Dataset">Dataset</h1>
+              <div class="is-size-5 dataset-link">
+                <span class="method-block">The link below contains the subset of dataset we cleaned for our project (With <b>overlapping</b> and <b>transcription unmatched</b> samples removed). 
+                  The dataset consists of <i>13,388</i> samples of <i>30</i> speakers, and 670 (~5%) of the samples are utilized as the test set.</span>
+              </div>
+          </div>
+          <span class="link-block">
+            <a href="https://drive.google.com/drive/folders/1caLcbYC5wklk-foVX99D077FS66LQHXR?usp=share_link"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Dataset</span>
+              </a>
+          </span>
+          <hr>
+          <div class="column has-text-centered">
+            <h1 class="subtitle is-6_ivec">State-of-the-art speaker identification methods in same scenario</h1>
+              <div class="is-size-6_ivec">
+                <span class="sota-block">The results of the state-of-the-art speaker identification methods evaulated:</span>
+                <table class="center">
+                  <tr>
+                    <th>Method</th>
+                    <th>SVM-R</th> 
+                    <th>SVM-L</th>
+                    <th>LR</th>
+                    <th>PLDA</th>
+                  </tr>
+                  <tr>
+                    <td>i-Vector*</td>
+                    <td>88.20</td> 
+                    <td>94.71</td>
+                    <td><u><b>94.10</b></u></td>
+                    <td>90.20</td>
+                  </tr>
+                </table>
+                <span class="sota-block">* is based on the baseline MFCC features.</span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the source code of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
